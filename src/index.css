@@ -1,0 +1,45 @@
+/* Importar todos los estilos CSS */
+@import '/css/bootstrap.min.css';
+@import '/css/font-awesome.min.css';
+@import '/css/animate.min.css';
+@import '/css/owl.carousel.css';
+@import '/css/owl.transitions.css';
+@import '/css/prettyPhoto.css';
+@import '/css/main.css';
+@import '/css/responsive.css';
+@import '/css/whatsapp.css';
+
+/* Estilos adicionales para React */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+}
+
+/* Ajustes para el navbar cuando está scrolleado */
+.navbar-fixed-top.scrolled {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+}
+
+/* Ajustes para el menú móvil */
+.navbar-collapse.in {
+  display: block !important;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}

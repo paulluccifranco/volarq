@@ -291,8 +291,6 @@ ul.nostyle i {
   line-height: 70px;
   text-align: center;
   z-index: 5;
-  -webkit-transition: background-color 400ms;
-  transition: background-color 400ms;
 }
 #main-slider .owl-prev:hover,
 #main-slider .owl-next:hover {
@@ -444,7 +442,7 @@ ul.nostyle i {
 }
 #portfolio .portfolio-filter > li a:hover,
 #portfolio .portfolio-filter > li a.active {
-  background: #72C05B;
+  background: black;
   color: #fff;
 }
 
@@ -684,7 +682,6 @@ ul.nostyle i {
   color: #fff;
   width: 100%;
   background: #2e2e2e;
-  position: fixed;
   z-index: 3000;
 }
 #footer a {
