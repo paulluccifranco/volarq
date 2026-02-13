@@ -2,9 +2,9 @@
 
 /* Variables CSS - Paleta Oscura */
 :root {
-  --primary-color: #72C05B;
-  --primary-dark: #5aa048;
-  --primary-light: #8dd176;
+  --primary-color: #FF7A3D;
+  --primary-dark: #E66A2D;
+  --primary-light: #FF9D6B;
   --bg-dark: #1a1a1a;
   --bg-darker: #0f0f0f;
   --bg-card: #252525;
@@ -189,6 +189,11 @@
 
 .hero-cta {
   margin-top: var(--spacing-lg);
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Botones */
@@ -202,6 +207,8 @@
   border: none;
   cursor: pointer;
   font-size: 1rem;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .btn-primary {
@@ -212,7 +219,7 @@
 .btn-primary:hover {
   background: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(114, 192, 91, 0.3);
+  box-shadow: 0 5px 15px rgba(255, 122, 61, 0.3);
 }
 
 /* Secciones */
@@ -396,7 +403,7 @@ textarea.form-control {
 }
 
 .alert-success {
-  background: rgba(114, 192, 91, 0.2);
+  background: rgba(255, 122, 61, 0.2);
   color: var(--primary-light);
   border: 1px solid var(--primary-color);
 }
@@ -458,7 +465,7 @@ textarea.form-control {
 
 .portfolio-item-modern:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 30px rgba(114, 192, 91, 0.2), 0 4px 15px var(--shadow-darker);
+  box-shadow: 0 8px 30px rgba(255, 122, 61, 0.2), 0 4px 15px var(--shadow-darker);
   border-color: var(--primary-color);
 }
 
@@ -496,7 +503,7 @@ textarea.form-control {
     135deg,
     rgba(15, 15, 15, 0.95) 0%,
     rgba(26, 26, 26, 0.9) 50%,
-    rgba(114, 192, 91, 0.15) 100%
+    rgba(255, 122, 61, 0.15) 100%
   );
   display: flex;
   flex-direction: column;
@@ -540,7 +547,7 @@ textarea.form-control {
   cursor: pointer;
   font-size: 1.3rem;
   transition: var(--transition);
-  box-shadow: 0 4px 15px rgba(114, 192, 91, 0.4);
+  box-shadow: 0 4px 15px rgba(255, 122, 61, 0.4);
   transform: translateY(10px) scale(0.9);
   opacity: 0;
 }
@@ -553,7 +560,7 @@ textarea.form-control {
 .portfolio-btn:hover {
   background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
   transform: scale(1.15);
-  box-shadow: 0 6px 20px rgba(114, 192, 91, 0.6);
+  box-shadow: 0 6px 20px rgba(255, 122, 61, 0.6);
   border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -597,7 +604,7 @@ textarea.form-control {
   background: var(--primary-color);
   border-color: var(--primary-color);
   transform: rotate(90deg);
-  box-shadow: 0 4px 15px rgba(114, 192, 91, 0.4);
+  box-shadow: 0 4px 15px rgba(255, 122, 61, 0.4);
 }
 
 .modal-image {
@@ -751,7 +758,7 @@ textarea.form-control {
 
 .social-icons a:hover {
   color: var(--primary-color);
-  background: rgba(114, 192, 91, 0.2);
+  background: rgba(255, 122, 61, 0.2);
   transform: translateY(-3px);
 }
 
@@ -770,6 +777,41 @@ textarea.form-control {
 @media (min-width: 768px) {
   .footer-content {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 767px) {
+  .hero-text {
+    padding: var(--spacing-sm);
+  }
+  
+  .hero-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .hero-cta .btn {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    white-space: normal;
+    line-height: 1.4;
+  }
+  
+  .services-cta .btn,
+  .cta-section .btn {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
   }
 }
 
@@ -820,6 +862,11 @@ textarea.form-control {
   .service-number {
     font-size: 4rem;
     min-width: 100px;
+  }
+  
+  .hero-cta .btn {
+    max-width: none;
+    width: auto;
   }
 }
 

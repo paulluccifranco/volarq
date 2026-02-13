@@ -12,7 +12,7 @@ const Hero = () => {
             </p>
             <div className="hero-cta">
               <a href="#contact" className="btn btn-primary">
-                Solicitá tu presupuesto ahora
+                <span>Solicitá tu presupuesto ahora</span>
               </a>
             </div>
           </div>

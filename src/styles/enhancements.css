@@ -1,0 +1,592 @@
+/* Mejoras de diseño profesionales y llamativas */
+
+/* ============================================
+   EFECTOS DE GLASSMORPHISM Y GRADIENTES
+   ============================================ */
+
+/* Header con efecto glassmorphism mejorado */
+.header-modern {
+  background: rgba(15, 15, 15, 0.8) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 122, 61, 0.1);
+}
+
+.header-modern.scrolled {
+  background: rgba(15, 15, 15, 0.95) !important;
+  box-shadow: 0 4px 30px rgba(255, 122, 61, 0.1), 0 2px 10px var(--shadow-darker);
+}
+
+/* Logo con efecto hover */
+.logo img {
+  transition: var(--transition);
+  filter: drop-shadow(0 2px 8px rgba(255, 122, 61, 0.3));
+}
+
+.logo:hover img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 12px rgba(255, 122, 61, 0.5));
+}
+
+/* ============================================
+   HERO SECTION MEJORADO
+   ============================================ */
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 15, 15, 0.95) 0%,
+    rgba(26, 26, 26, 0.85) 50%,
+    rgba(255, 122, 61, 0.1) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+}
+
+.hero-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  border-radius: 2px;
+  animation: expandLine 1s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes expandLine {
+  to {
+    width: 200px;
+    opacity: 1;
+  }
+}
+
+.hero-subtitle {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.hero-cta {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* Botón mejorado con efecto glow */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  box-shadow: 0 4px 15px rgba(255, 122, 61, 0.4),
+              0 0 20px rgba(255, 122, 61, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 122, 61, 0.6),
+              0 0 30px rgba(255, 122, 61, 0.4);
+}
+
+.btn-primary span {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   SERVICIOS CON EFECTOS MEJORADOS
+   ============================================ */
+
+.service-item {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 122, 61, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.service-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 122, 61, 0.1),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.service-item:hover::before {
+  left: 100%;
+}
+
+.service-item:hover {
+  transform: translateY(-8px) translateX(5px);
+  box-shadow: 0 10px 30px rgba(255, 122, 61, 0.2),
+              0 0 20px rgba(255, 122, 61, 0.1);
+  border-color: var(--primary-color);
+}
+
+.service-number {
+  position: relative;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(255, 122, 61, 0.5);
+  transition: var(--transition);
+}
+
+.service-item:hover .service-number {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(255, 122, 61, 0.8));
+}
+
+.service-title {
+  position: relative;
+  transition: var(--transition);
+}
+
+.service-item:hover .service-title {
+  color: var(--primary-light) !important;
+  transform: translateX(5px);
+}
+
+/* ============================================
+   PORTFOLIO CON EFECTOS AVANZADOS
+   ============================================ */
+
+.portfolio-item-modern {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-item-modern::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 122, 61, 0) 0%,
+    rgba(255, 122, 61, 0.1) 50%,
+    rgba(255, 122, 61, 0) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.portfolio-item-modern:hover::after {
+  opacity: 1;
+}
+
+.portfolio-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 15, 15, 0.98) 0%,
+    rgba(26, 26, 26, 0.95) 50%,
+    rgba(255, 122, 61, 0.2) 100%
+  );
+}
+
+.portfolio-title {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.portfolio-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 50%;
+  height: 2px;
+  background: var(--primary-color);
+  transition: transform 0.4s ease-out;
+}
+
+.portfolio-item-modern:hover .portfolio-title::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* ============================================
+   EFECTOS DE PARALLAX Y MOVIMIENTO
+   ============================================ */
+
+.hero-image {
+  animation: slowFloat 20s ease-in-out infinite;
+}
+
+@keyframes slowFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.02);
+  }
+}
+
+/* ============================================
+   EFECTOS DE BRILLO Y GLOW
+   ============================================ */
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 122, 61, 0.4),
+                0 0 40px rgba(255, 122, 61, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 122, 61, 0.6),
+                0 0 60px rgba(255, 122, 61, 0.3);
+  }
+}
+
+.portfolio-btn {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* ============================================
+   MEJORAS EN TIPOGRAFÍA
+   ============================================ */
+
+.section-title-large {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title-large::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 60%;
+  background: linear-gradient(180deg, var(--primary-color), transparent);
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.4s, height 0.4s;
+}
+
+.section-intro:hover .section-title-large::before {
+  opacity: 1;
+  height: 100%;
+}
+
+/* ============================================
+   EFECTOS DE SCROLL REVEAL
+   ============================================ */
+
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   MEJORAS EN FORMULARIOS
+   ============================================ */
+
+.form-control {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 122, 61, 0.2),
+              0 0 0 3px rgba(255, 122, 61, 0.1);
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.form-group:focus-within::after {
+  width: 100%;
+}
+
+/* ============================================
+   EFECTOS DE HOVER EN NAVEGACIÓN
+   ============================================ */
+
+.main-nav a {
+  position: relative;
+  overflow: hidden;
+}
+
+.main-nav a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover::before {
+  width: 100%;
+}
+
+/* ============================================
+   MEJORAS EN FOOTER
+   ============================================ */
+
+.footer-modern {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-color),
+    transparent
+  );
+}
+
+.social-icons a {
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icons a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 122, 61, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+}
+
+.social-icons a:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.social-icons a i {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover i {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* ============================================
+   EFECTOS DE PARTÍCULAS Y DECORACIÓN
+   ============================================ */
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 122, 61, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: float 15s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+/* ============================================
+   MEJORAS EN CALL TO ACTION
+   ============================================ */
+
+.cta-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%
+  );
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   EFECTOS DE CURSOR PERSONALIZADO (OPCIONAL)
+   ============================================ */
+
+@media (min-width: 992px) {
+  .portfolio-item-modern,
+  .service-item,
+  .btn-primary {
+    cursor: pointer;
+  }
+}
+
+/* ============================================
+   ANIMACIONES DE ENTRADA MEJORADAS
+   ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================
+   RESPONSIVE MEJORAS
+   ============================================ */
+
+@media (max-width: 767px) {
+  .hero-title::after {
+    width: 80px;
+  }
+  
+  @keyframes expandLine {
+    to {
+      width: 150px;
+      opacity: 1;
+    }
+  }
+  
+  .service-item:hover {
+    transform: translateY(-5px);
+  }
+}
