@@ -16,7 +16,7 @@ const Header = () => {
     e.preventDefault()
     const element = document.querySelector(sectionId)
     if (element) {
-      const headerHeight = 60 // Altura aproximada del header
+      const headerHeight = 70
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
       const offsetPosition = elementPosition - headerHeight
 
@@ -29,52 +29,49 @@ const Header = () => {
   }
 
   return (
-    <header id="top-header" className={`navbar-inverse navbar-fixed-top ${isScrolled ? 'scrolled' : ''}`}>
+    <header id="top-header" className={`header-modern ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
-        <div className="navbar-header">
+        <div className="header-content">
+          <div className="logo">
+            <a className="smooth-scroll" onClick={(e) => scrollToSection(e, '#home')} href="#home">
+              <img src="/images/logo.png" alt="Volarq Logo" />
+            </a>
+          </div>
           <button
             type="button"
-            className="navbar-toggle"
+            className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle navigation"
           >
-            <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
-          <div className="navbar-brand">
-            <a className="smooth-scroll" onClick={(e) => scrollToSection(e, '#home')} href="#home">
-              <img src="/images/logo.png" width="80%" alt="Volarq Logo" />
-            </a>
-          </div>
-        </div>
-        <nav className={`collapse navbar-collapse navbar-right ${isMenuOpen ? 'in' : ''}`}>
-          <div className="main-menu">
-            <ul id="nav" className="nav navbar-nav">
-              <li className="scroll">
-                <a href="#home" onClick={(e) => scrollToSection(e, '#home')} data-section="#home">
-                  Inicio
+          <nav className={`main-nav ${isMenuOpen ? 'active' : ''}`}>
+            <ul>
+              <li>
+                <a href="#about" onClick={(e) => scrollToSection(e, '#about')}>
+                  Quienes Somos
                 </a>
               </li>
-              <li className="scroll">
-                <a href="#about" onClick={(e) => scrollToSection(e, '#about')} data-section="#about">
-                  Nosotros
-                </a>
-              </li>
-              <li className="scroll">
-                <a href="#services" onClick={(e) => scrollToSection(e, '#services')} data-section="#services">
+              <li>
+                <a href="#services" onClick={(e) => scrollToSection(e, '#services')}>
                   Servicios
                 </a>
               </li>
-              <li className="scroll">
-                <a href="#portfolio" onClick={(e) => scrollToSection(e, '#portfolio')} data-section="#portfolio">
+              <li>
+                <a href="#portfolio" onClick={(e) => scrollToSection(e, '#portfolio')}>
                   Diseños
                 </a>
               </li>
+              <li>
+                <a href="#contact" onClick={(e) => scrollToSection(e, '#contact')}>
+                  Contacto
+                </a>
+              </li>
             </ul>
-          </div>
-        </nav>
+          </nav>
+        </div>
       </div>
     </header>
   )

@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
 const Portfolio = () => {
-  const [selectedFilter, setSelectedFilter] = useState('*')
   const [selectedImage, setSelectedImage] = useState(null)
 
   const portfolioItems = [
@@ -26,46 +25,35 @@ const Portfolio = () => {
   }
 
   return (
-    <section id="portfolio">
+    <section id="portfolio" className="portfolio-section">
       <div className="container">
-        <div className="section-header">
-          <h2 className="section-title text-center" data-aos="fade-down">
-            Nuestros Trabajos
-          </h2>
+        <div className="section-intro" data-aos="fade-up">
+          <h2 className="section-title-large">Nuestros Trabajos</h2>
+          <p className="section-description">
+            Con nuestra orientación y conocimiento, cada trazo se transforma en una realidad bien estructurada.
+            Tu proyecto merece una planificación precisa, y nosotros estamos aquí para garantizar que así sea.
+          </p>
         </div>
 
-        <div className="text-center">
-          <ul className="portfolio-filter">
-            <li>
-              <a
-                className={selectedFilter === '*' ? 'active' : ''}
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault()
-                  setSelectedFilter('*')
-                }}
-                data-filter="*"
-              >
-                Proyectos
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="portfolio-items">
-          {portfolioItems.map((item) => (
-            <div key={item.id} className="portfolio-item animation">
-              <div className="portfolio-item-inner">
-                <img className="img-responsive" src={item.image} alt={item.title} />
-                <div className="portfolio-info">
-                  <h3>{item.title}</h3>
-                  <a
-                    className="preview"
-                    href={item.image}
+        <div className="portfolio-grid">
+          {portfolioItems.map((item, index) => (
+            <div
+              key={item.id}
+              className="portfolio-item-modern"
+              data-aos="fade-up"
+              data-aos-delay={index * 50}
+            >
+              <div className="portfolio-image-wrapper">
+                <img className="portfolio-image" src={item.image} alt={item.title} />
+                <div className="portfolio-overlay">
+                  <h3 className="portfolio-title">{item.title}</h3>
+                  <button
+                    className="portfolio-btn"
                     onClick={(e) => handleImageClick(item.image, e)}
+                    aria-label={`Ver ${item.title}`}
                   >
-                    <img src="/images/portfolio/expand.png" alt="Expand" />
-                  </a>
+                    <i className="fa fa-expand"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -73,31 +61,14 @@ const Portfolio = () => {
         </div>
       </div>
       {selectedImage && (
-        <div
-          className="image-modal"
-          onClick={closeModal}
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            background: 'rgba(0,0,0,0.9)',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            zIndex: 10000,
-            cursor: 'pointer',
-          }}
-        >
+        <div className="image-modal" onClick={closeModal}>
+          <button className="modal-close" onClick={closeModal} aria-label="Cerrar">
+            <i className="fa fa-times"></i>
+          </button>
           <img
             src={selectedImage}
             alt="Portfolio"
-            style={{
-              maxWidth: '90%',
-              maxHeight: '90%',
-              objectFit: 'contain',
-            }}
+            className="modal-image"
             onClick={(e) => e.stopPropagation()}
           />
         </div>

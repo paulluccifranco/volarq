@@ -3,7 +3,9 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
 import Services from './components/Services'
+import CallToAction from './components/CallToAction'
 import Portfolio from './components/Portfolio'
+import Contact from './components/Contact'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 import AOS from 'aos'
@@ -24,7 +26,9 @@ function App() {
       <Hero />
       <About />
       <Services />
+      <CallToAction />
       <Portfolio />
+      <Contact />
       <Footer />
       <WhatsAppButton />
     </div>
